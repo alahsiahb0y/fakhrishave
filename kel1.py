@@ -12,6 +12,43 @@ def random_color():
 # Warna acak untuk background
 background_color = random_color()
 
+st.markdown(
+    """
+    <style>
+        /* Memastikan lebar tampilan menggunakan seluruh layar */
+        .main {
+            max-width: 100%;
+            padding: 0;
+        }
+
+        /* Memastikan elemen-elemen di streamlit diatur secara responsif */
+        .css-1v0mbdj {
+            max-width: 100%;
+        }
+
+        /* Mengatur lebar kolom untuk responsivitas */
+        .css-18e3th9 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        /* Mengatur ukuran font di perangkat kecil (HP) dan besar */
+        @media screen and (max-width: 600px) {
+            .css-1v0mbdj, .css-18e3th9 {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+        @media screen and (min-width: 601px) {
+            .css-1v0mbdj, .css-18e3th9 {
+                padding: 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
 # CSS untuk lapisan background
 st.markdown(
     f"""
