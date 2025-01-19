@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import random
 
 # Configure the page layout
-st.set_page_config(page_title="Antioxidant Calc", page_icon="💀")
+st.set_page_config(page_title="Antioxidant Calc", page_icon="🌿")
 
 def random_color():
     return f"rgba({random.randint(0, 255)}, {random.randint(0, 255)}, {random.randint(0, 255)}, 1)"  # 0.5 untuk opacity
@@ -191,7 +191,7 @@ elif st.sidebar.button("🔍 Contact", use_container_width=True):
 
 def home():
     st.markdown("""<style>.title {color: pink; text-align: center; font-size: 40px;} .custom-button {background-color: #32CD32; color: white; border: 1px solid white; border-radius: 10px; padding: 10px 20px; cursor: pointer; display: inline-block;} .custom-button:hover {background-color: #ffff;} .center-content {text-align: center;}</style>""", unsafe_allow_html=True)
-    st.markdown("<h1 class='typing'>💀 Antioxidant Calc 💀</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='typing'>🌿 Antioxidant Calc 🌿</h1>", unsafe_allow_html=True)
 
     if st.button("Start to Calculate", key="start_button", use_container_width=True):
         st.session_state.current_page = "Page 2"
@@ -229,7 +229,7 @@ def atox_calc_page(method):
     if method == "DPPH":
         st.markdown("<h1 style='color: #330066; text-align: center;'>DPPH</h1>", unsafe_allow_html=True)
         blank = st.number_input("Input blanko", format="%.6f")
-        num_samples = st.number_input("Berapa banyak sampel ingin diuji", min_value=0, step=1)
+        num_samples = st.number_input("Berapa banyak sampel ingin diuji", min_value=2, step=1)
 
         if num_samples > 0:
             st.write("Masukkan konsentrasi (ppm) dan absorbansi untuk setiap sampel")
@@ -278,7 +278,7 @@ def atox_calc_page(method):
     elif method == "FRAP":
         st.markdown("<h1 style='color: #FF3333; text-align: center;'>FRAP</h1>", unsafe_allow_html=True)
         blank = st.number_input("Input blanko", format="%.6f")
-        num_samples = st.number_input("Berapa banyak sampel ingin diuji", min_value=0, step=1)
+        num_samples = st.number_input("Berapa banyak sampel ingin diuji", min_value=2, step=1)
 
         if num_samples > 0:
             st.write("Masukkan konsentrasi (ppm) dan absorbansi untuk setiap sampel")
