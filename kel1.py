@@ -12,43 +12,6 @@ def random_color():
 # Warna acak untuk background
 background_color = random_color()
 
-st.markdown(
-    """
-    <style>
-        /* Memastikan lebar tampilan menggunakan seluruh layar */
-        .main {
-            max-width: 100%;
-            padding: 0;
-        }
-
-        /* Memastikan elemen-elemen di streamlit diatur secara responsif */
-        .css-1v0mbdj {
-            max-width: 100%;
-        }
-
-        /* Mengatur lebar kolom untuk responsivitas */
-        .css-18e3th9 {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        /* Mengatur ukuran font di perangkat kecil (HP) dan besar */
-        @media screen and (max-width: 600px) {
-            .css-1v0mbdj, .css-18e3th9 {
-                padding: 10px;
-                font-size: 14px;
-            }
-        }
-        @media screen and (min-width: 601px) {
-            .css-1v0mbdj, .css-18e3th9 {
-                padding: 20px;
-                font-size: 16px;
-            }
-        }
-    </style>
-    """, unsafe_allow_html=True)
-
 # CSS untuk lapisan background
 st.markdown(
     f"""
@@ -162,6 +125,30 @@ def set_background():
             border-radius: 10px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
+        .typewriter {
+            font-family: 'Courier New', monospace;
+            display: inline-block;
+            border-right: 2px solid #fff;
+            padding-right: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3s steps(30) 1s 1 normal both, blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
         </style>
         """,
         unsafe_allow_html=True
@@ -228,13 +215,13 @@ elif st.sidebar.button("🔍 Contact", use_container_width=True):
 
 def home():
     st.markdown("""<style>.title {color: pink; text-align: center; font-size: 40px;} .custom-button {background-color: #32CD32; color: white; border: 1px solid white; border-radius: 10px; padding: 10px 20px; cursor: pointer; display: inline-block;} .custom-button:hover {background-color: #ffff;} .center-content {text-align: center;}</style>""", unsafe_allow_html=True)
-    st.markdown("<h1 class='typing'>🌿 Antioxidant Calc 🌿</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='typing typewriter'>🌿 Antioxidant Calc 🌿</h1>", unsafe_allow_html=True)
 
     if st.button("Start to Calculate", key="start_button", use_container_width=True):
         st.session_state.current_page = "Page 2"
 
     st.write("""
-<div class="typing bordered-text">
+<div class="typing bordered-text typewriter">
         Antioksidan adalah suatu zat yang dapat melindungi senyawa kimia dalam tubuh dari oksidasi yang dapat merusak dengan cara bereaksi dengan radikal bebas dan spesi oksigen reaktif, sehingga dapat menghambat oksidasi. Antioksidan juga disebut sebagai scavenger (zat/peredam) radikal bebas dan dapat menetralkan radikal bebas. Antioksidan sebagai senyawa yang dapat menonaktifkan radikal bebas dengan 
         menggunakan dua mekanisme utama yaitu Hidrogen Atom Transfer (HAT) dan 
         Single Electron Transfer (SET). Kedua mekanisme tersebut menjadi dasar metode
