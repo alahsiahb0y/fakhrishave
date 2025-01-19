@@ -369,7 +369,19 @@ if st.session_state.get("current_page") == "Home":
     home()
 elif st.session_state.get("current_page") == "About Us":
     st.title("About Us")
-    # Menampilkan HTML dan CSS
+    html_code = """
+            <style>
+                .profile-pic {
+                    border: 5px solid white;
+                    border-radius: 15px;
+                    width: 150px;
+                    height: 150px;
+                    object-fit: cover;
+                }
+            </style>
+        """
+    
+        # Menampilkan HTML dan CSS
     st.markdown(html_code, unsafe_allow_html=True)
 
     # Daftar nama dan foto
