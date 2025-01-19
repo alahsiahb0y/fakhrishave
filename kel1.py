@@ -88,7 +88,7 @@ def set_background():
 
         /* Sidebar */
         [data-testid="stSidebar"] {
-            background-color: rgba(255, 0, 0, 0.5) !important; /* Warna oranye dengan transparansi 80% */
+            background-color: rgba(255, 153, 51, 0.5) !important; /* Warna oranye dengan transparansi 80% */
     }
 
         /* Button */
