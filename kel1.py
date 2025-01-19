@@ -347,7 +347,7 @@ contact_2 = """
 contact_3 = """
 <div style="display: flex; align-items: center;">
     <img src="https://portal-uang.com/wp-content/uploads/2021/06/Logo-WhatsApp-Transparan-810x540.png" width="55" height="40" style="margin-right: 10px;">
-    <span><strong>Pinkan Regina Ayu Maharani</strong> +62 8</span>
+    <span><strong>Pinkan Regina Ayu Maharani</strong> +62 856-9235-6848</span>
 </div>
 """
 contact_4 = """
@@ -359,7 +359,7 @@ contact_4 = """
 contact_5 = """
 <div style="display: flex; align-items: center;">
     <img src="https://portal-uang.com/wp-content/uploads/2021/06/Logo-WhatsApp-Transparan-810x540.png" width="55" height="40" style="margin-right: 10px;">
-    <span><strong>Anargya Cinta Ismoyo</strong> +62 8</span>
+    <span><strong>Anargya Cinta Ismoyo</strong> +62 896-8490-0503</span>
 </div>
 """
 
