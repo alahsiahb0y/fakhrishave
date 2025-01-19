@@ -369,45 +369,37 @@ if st.session_state.get("current_page") == "Home":
     home()
 elif st.session_state.get("current_page") == "About Us":
     st.title("About Us")
-    st.markdown("""
-    <style>
-        .team-member {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .team-member img {
-            width: 100px;
-            height: 100px;
-            border-radius: 20%;
-            margin-right: 20px;
-            object-fit: cover;
-            border: 2px solid #ddd;
-        }
-        .team-member div {
-            font-size: 18px;
-            font-weight: bold;
-        }
-    </style>
-    """, unsafe_allow_html=True)
+    # Menampilkan HTML dan CSS
+    st.markdown(html_code, unsafe_allow_html=True)
 
     # Daftar nama dan foto
-    members = [
-        {"name": "Muhammad Fakhri Al-Fathi - 2350108", "photo": "C:/Users/YourUsername/Downloads/ara.jpg"},
-        {"name": "Nabila Azizi Rohmah - 2350116", "photo": "path_to_images/nabila.jpg"},
-        {"name": "Pinkan Regina Ayu Maharani - 2350126", "photo": "path_to_images/pinkan.jpg"},
-        {"name": "Syifa Ahista Maharani - 2350136", "photo": "path_to_images/syifa.jpg"},
-        {"name": "Anargya Cinta Ismoyo - 2350073", "photo": "path_to_images/anargya.jpg"}
-    ]
+    col1, col2, col3, col4, col5 = st.columns(5)
 
-    # Menampilkan daftar nama dengan foto
-    for member in members:
-        st.markdown(f"""
-        <div class="team-member">
-            <img src="file://{member['photo']}" alt="Profile Photo">
-            <div>{member['name']}</div>
-        </div>
-        """, unsafe_allow_html=True)
+    # Menampilkan gambar dan teks di kolom pertama
+    with col1:
+        st.image("fakhri.jpg", width=150)
+        st.write("Anargya Cinta Ismoyo - 2350073")
+
+    # Menampilkan gambar dan teks di kolom kedua
+    with col2:
+        st.image("fakhri.jpg", width=150)
+        st.write("Muhammad Fakhri Al-Fathi - 2350108")
+
+    # Menampilkan gambar dan teks di kolom ketiga
+    with col3:
+        st.image("fakhri.jpg", width=150)
+        st.write("Nabila Azizi Rohmah (2350116)")
+
+    # Menampilkan gambar dan teks di kolom keempat
+    with col4:
+        st.image("fakhri.jpg", width=150)
+        st.write("Pinkan Regina Ayu Maharani - 2350126")
+
+    # Menampilkan gambar dan teks di kolom kelima
+    with col5:
+        st.image("fakhri.jpg", width=150)
+        st.write("Syifa Ahista Maharani - 2350136")
+
 elif st.session_state.get("current_page") == "Contact":
     st.title("Contact")    
     # Menampilkan daftar kontak di aplikasi
