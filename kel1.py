@@ -35,6 +35,33 @@ def set_background():
     st.markdown(
         """
         <style>
+        html, body, [class*="css"] {
+        font-family: 'Consolas', 'Courier New', monospace !important; /* Font monospaced */
+        color: #ffff !important; /* Warna teks default */
+        font-size: 16px !important; /* Ukuran font default */
+        }
+
+        /* Atur heading jika diperlukan */
+        h1, h2, h3, h4, h5, h6 {
+        font-family: 'Consolas', 'Courier New', monospace !important;
+        color: #ffff !important; /* Warna heading */
+        }
+
+        /* Mengubah font tombol */
+        button {
+        font-family: 'Consolas', 'Courier New', monospace !important;
+        font-size: 14px !important;
+        }
+        
+        div.stNumberInput > div > input {
+        background-color: #f0f8ff !important; /* Warna latar belakang */
+        color: #000080 !important;          /* Warna teks */
+        border: 2px solid #000080 !important; /* Warna border */
+        border-radius: 5px !important;      /* Radius border */
+        padding: 5px !important;            /* Padding */
+        font-size: 16px !important;         /* Ukuran font */
+        }
+        
         .bordered-text {
             border: 10px solid #ffff;  /* Warna border (merah-oranye) */
             padding: 10px;              /* Jarak antara teks dan border */
@@ -59,12 +86,6 @@ def set_background():
             color: #ffff
         }
 
-        /* Header */
-        h1, h2, h3, h4, p {
-            color: #FFFF;
-            font-family: 'Consolas', 'Courier New', monospace;
-        }
-
         /* Sidebar */
         [data-testid="stSidebar"] {
             background-color: rgba(255, 0, 0, 0.5) !important; /* Warna oranye dengan transparansi 80% */
@@ -72,11 +93,22 @@ def set_background():
 
         /* Button */
         .stButton > button {
-            background-color: #FF9933;
-            color: white;
+            background-color: #ffff !important; /* Warna latar belakang default */
+            color: #ff9933 !important;             /* Warna teks default */
+            border: 3px solid #ff9933 !important; /* Warna border default */
+            padding: 10px 24px;
             font-weight: bold;
             border-radius: 10px;
-            padding: 10px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s; /* Efek transisi */
+        }
+
+        /* Gaya tombol saat hover */
+        button:hover {
+            background-color: #ff9933 !important;  /* Warna latar belakang saat hover */
+            color: #ffff !important;          /* Warna teks saat hover */
+            border: 3px solid #ffff !important; /* Border tetap saat hover */
         }
 
         /* Card Box */
