@@ -221,7 +221,7 @@ def home():
         st.session_state.current_page = "Page 2"
 
     st.write("""
-<div class="typing bordered-text typewriter">
+<div class="typing bordered-text">
         Antioksidan adalah suatu zat yang dapat melindungi senyawa kimia dalam tubuh dari oksidasi yang dapat merusak dengan cara bereaksi dengan radikal bebas dan spesi oksigen reaktif, sehingga dapat menghambat oksidasi. Antioksidan juga disebut sebagai scavenger (zat/peredam) radikal bebas dan dapat menetralkan radikal bebas. Antioksidan sebagai senyawa yang dapat menonaktifkan radikal bebas dengan 
         menggunakan dua mekanisme utama yaitu Hidrogen Atom Transfer (HAT) dan 
         Single Electron Transfer (SET). Kedua mekanisme tersebut menjadi dasar metode
@@ -237,7 +237,7 @@ def home():
 
 def page_2():
     st.markdown("""<style>.title {color: pink; text-align: center; font-size: 40px;} .custom-button {background-color: #32CD32; color: white; border: 1px solid white; border-radius: 10px; padding: 10px 20px; cursor: pointer; display: inline-block;} .custom-button:hover {background-color: #28a745;} .center-content {text-align: center;}</style>""", unsafe_allow_html=True)
-    st.markdown("<h1 class='title'>Select a Test Method</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='title typewriter'>Select a Test Method</h1>", unsafe_allow_html=True)
 
     test_methods = ["ORAC", "TRAP", "LPIC", "FRAP", "TEAC", "DPPH", "CUPRAC", "ABTS"]
     cols = st.columns(4)
@@ -449,17 +449,3 @@ elif "ATOX.CALC-" in st.session_state.current_page:
     atox_calc_page(method)
 else:
     page_2()
-
-# if st.session_state.current_page == "Home":
-#     home()
-# elif st.session_state.current_page == "About Us":
-#     st.title("About Us")
-
-# elif st.session_state.current_page == "Contact":
-#     st.title("Contact")
-#     st.write("This is the Contact page.")
-
-# else:
-#     page_2()
-
-
