@@ -433,7 +433,7 @@ elif st.session_state.get("current_page") == "About Us":
 
     # Menampilkan gambar dan teks di kolom kelima
     with col5:
-        st.image("fakhri.jpg", width=150)
+        st.image("tata.jpg", width=150)
         st.write("Syifa Ahista Maharani - 2350136")
 
 elif st.session_state.get("current_page") == "Contact":
