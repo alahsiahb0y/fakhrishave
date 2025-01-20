@@ -413,7 +413,7 @@ elif st.session_state.get("current_page") == "About Us":
 
     # Menampilkan gambar dan teks di kolom pertama
     with col1:
-        st.image("fakhri.jpg", width=150)
+        st.image("cinta.jpg", width=150)
         st.write("Anargya Cinta Ismoyo - 2350073")
 
     # Menampilkan gambar dan teks di kolom kedua
@@ -423,12 +423,12 @@ elif st.session_state.get("current_page") == "About Us":
 
     # Menampilkan gambar dan teks di kolom ketiga
     with col3:
-        st.image("fakhri.jpg", width=150)
+        st.image("bilzi.jpg", width=150)
         st.write("Nabila Azizi Rohmah (2350116)")
 
     # Menampilkan gambar dan teks di kolom keempat
     with col4:
-        st.image("fakhri.jpg", width=150)
+        st.image("pinkan.jpg", width=150)
         st.write("Pinkan Regina Ayu Maharani - 2350126")
 
     # Menampilkan gambar dan teks di kolom kelima
