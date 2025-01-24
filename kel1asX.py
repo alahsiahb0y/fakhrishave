@@ -383,7 +383,7 @@ def atox_calc_page(method):
         google_calendar_link = (
             "https://calendar.google.com/calendar/render?action=TEMPLATE"
             "&text=Pengingat+Kalkulator+ORAC"  # Judul acara
-            "&details=Jangan+lupa+gunakan+kalkulator+ORAC+pada+tanggal+24+Januari+2025!"  # Detail acara
+            "&details=Jangan+lupa+gunakan+kalkulator+ORAC+pada+tanggal+30+Januari+2025!"  # Detail acara
             "&dates=20250130T000000Z/20250130T235900Z"  # Tanggal mulai dan selesai (UTC)
         )
 
