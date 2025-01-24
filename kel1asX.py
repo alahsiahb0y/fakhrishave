@@ -699,31 +699,10 @@ elif st.session_state.current_page == "Share Me":
 
     # Contoh penggunaan
     link = "https://fakhrishave-hlqgha2kkfbevzxwxtm3fq.streamlit.app/"
-    st.write("Klik tombol di bawah untuk menyalin link:")
+    st.title("Share Via Link:")
     if st.button("Salin Link"):
         copy_to_clipboard_alternative(link)
-    
-    st.title("Share Via Link")
-    # Membuat layout dengan satu kolom
-    with st.container():
-        col1, col2 = st.columns([4, 1])  # Mengatur tata letak: teks link dan tombol
-        with col1:
-            # Menampilkan link
-            st.markdown(
-                '<div style="border: 2px solid #ff9933; padding: 10px; border-radius: 5px; background-color: #ff9933;">'
-                '<a href="https://fakhrishave-brhm5hpskxnzeapaxkrgwx.streamlit.app/" '
-                'target="_blank" style="font-size: 16px; color: #ffff; text-decoration: none;">'
-                'https://fakhrishave-brhm5hpskxnzeapaxkrgwx.streamlit.app/</a>'
-                '</div>', unsafe_allow_html=True,
-            )
-        with col2:
-            # Menambahkan tombol "Salin Link"
-            if st.button("Salin Link", key="copy_button", on_click=copy_to_clipboard):
-                pass
 
-
-    # Link aplikasi
-    app_link = "https://fakhrishave-brhm5hpskxnzeapaxkrgwx.streamlit.app/"
 
     # Tombol untuk membagikan link
     st.title("Share Via WhatsApp")
