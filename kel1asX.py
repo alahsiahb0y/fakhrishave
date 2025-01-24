@@ -683,25 +683,25 @@ elif st.session_state.current_page == "Contact":
     st.markdown(contact_5, unsafe_allow_html=True)
 
 elif st.session_state.current_page == "Share Me":
-    # Memberikan jarak antar elemen dengan menggunakan st.markdown() dan CSS
-    st.markdown("<br>", unsafe_allow_html=True)  # Menambahkan jarak antar elemen
-    # Fungsi untuk menyalin link ke clipboard
-    def copy_to_clipboard():
-        link = "https://fakhrishave-brhm5hpskxnzeapaxkrgwx.streamlit.app/"
-        pyperclip.copy(link)  # Menyalin link ke clipboard
-        st.session_state["copy_status"] = "Link berhasil disalin!"  # Menyimpan status
-
-    # Inisialisasi status salinan jika belum ada
-    if "copy_status" not in st.session_state:
-        st.session_state["copy_status"] = ""
-
-    def display_link(link):
+    def copy_to_clipboard_alternative(link):
         try:
-            pyperclip.copy(link)
-            st.success("Link berhasil disalin ke clipboard!")
-        except Exception:
-            st.error("Gagal menyalin ke clipboard.")
-            st.code(link, language=None)  # Menampilkan link di layar
+            clipboard.copy(link)  # Menyalin link ke clipboard
+            st.success("Link berhasil disalin ke clipboard.")
+        except Exception as e:
+            st.error(f"Gagal menyalin ke clipboard. Error: {e}")
+            st.code(link)
+            st.download_button(
+                label="Unduh Link",
+                data=link,
+                file_name="fallback_link.txt",
+                mime="text/plain"
+            )
+
+# Contoh penggunaan
+link = "https://fakhrishave-hlqgha2kkfbevzxwxtm3fq.streamlit.app/"
+st.write("Klik tombol di bawah untuk menyalin link:")
+if st.button("Salin Link"):
+    copy_to_clipboard_alternative(link)
     
     st.title("Share Via Link")
     # Membuat layout dengan satu kolom
