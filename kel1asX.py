@@ -695,6 +695,18 @@ elif st.session_state.current_page == "Share Me":
     if "copy_status" not in st.session_state:
         st.session_state["copy_status"] = ""
 
+    def copy_to_clipboard("https://fakhrishave-brhm5hpskxnzeapaxkrgwx.streamlit.app/"):
+        try:
+            pyperclip.copy("https://fakhrishave-brhm5hpskxnzeapaxkrgwx.streamlit.app/")
+            print("Link berhasil disalin ke clipboard.")
+        except pyperclip.PyperclipException as e:
+            print("Gagal menyalin link ke clipboard. Error:", e)
+            # Menyimpan link ke file teks sebagai alternatif
+            with open("fallback_link.txt", "w") as f:
+                f.write("https://fakhrishave-brhm5hpskxnzeapaxkrgwx.streamlit.app/")
+            print("Link telah disimpan ke fallback_link.txt.")
+
+
     st.title("Share Via Link")
     # Membuat layout dengan satu kolom
     with st.container():
