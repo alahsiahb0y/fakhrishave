@@ -502,31 +502,15 @@ elif st.session_state.current_page == "Share Me":
     # Fungsi untuk menyalin link ke clipboard
     def copy_to_clipboard():
         link = "https://fakhrishave-brhm5hpskxnzeapaxkrgwx.streamlit.app/"
-        pyperclip.copy(link)  # Menyalin link ke clipboard
-        st.session_state["copy_status"] = "Link berhasil disalin!"  # Menyimpan status
+        try:
+            pyperclip.copy(link)  # Menyalin link ke clipboard
+            st.session_state["copy_status"] = "Link berhasil disalin!"  # Menyimpan status
+        except pyperclip.PyperclipException as e:
+            st.session_state["copy_status"] = f"Terjadi kesalahan: {e}"  # Menyimpan pesan kesalahan
 
     # Inisialisasi status salinan jika belum ada
     if "copy_status" not in st.session_state:
         st.session_state["copy_status"] = ""
-
-    # st.markdown(
-    #     """
-    #     <div style="
-    #         background-color: #f9f9f9; 
-    #         padding: 15px; 
-    #         border-radius: 10px; 
-    #         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
-    #         margin-bottom: 20px;">
-    #         <h4 style="color: #ff9933; font-family: 'Minion Pro', monospaces !important;">Share Me</h4>
-    #         <p style="color: #ff9933; font-family: 'Minion Pro', monospaces-size: 14px;">
-    #         Anda dapat membagikan web "Antioxidant Calc" ini dengan mudah menggunakan <br>Salin Link<br>Barcode<br>Share Via WhatsApp.
-    #         </p>
-    #     </div>
-    #     """,
-    #     unsafe_allow_html=True,
-        
-    # )
-
 
     st.title("Share Via Link")
     # Membuat layout dengan satu kolom
