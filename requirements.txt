@@ -4,5 +4,4 @@ pandas
 numpy
 cycler
 kiwisolver
-base64
 pyperclip
