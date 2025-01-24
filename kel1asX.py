@@ -738,7 +738,7 @@ elif st.session_state.current_page == "Share Me":
 
 
     st.title("Share Via Barcode")
-    st.image("./barcode.jpg")
+    st.image("./brcd.jpg")
 
 elif "ATOX.CALC-" in st.session_state.current_page:
     method = st.session_state.current_page.split("-")[1]
