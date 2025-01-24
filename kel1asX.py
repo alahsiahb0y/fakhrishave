@@ -683,20 +683,20 @@ elif st.session_state.current_page == "Contact":
     st.markdown(contact_5, unsafe_allow_html=True)
 
 elif st.session_state.current_page == "Share Me":
+    # Contoh penggunaan
+    link = "https://fakhrishave-hlqgha2kkfbevzxwxtm3fq.streamlit.app/"
+    st.title("Share Via Link:")
+    
+    # Tampilkan link sebagai kode (agar pengguna bisa menyalin manual)
     st.code(link)
+    
+    # Sediakan tombol untuk mengunduh link sebagai file teks
     st.download_button(
         label="Unduh Link",
         data=link,
         file_name="fallback_link.txt",
         mime="text/plain"
-    
-
-    # Contoh penggunaan
-    link = "https://fakhrishave-hlqgha2kkfbevzxwxtm3fq.streamlit.app/"
-    st.title("Share Via Link:")
-    if st.button("Salin Link"):
-        copy_to_clipboard_alternative(link)
-
+    )
 
     # Tombol untuk membagikan link
     st.title("Share Via WhatsApp")
