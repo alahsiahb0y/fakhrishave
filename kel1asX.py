@@ -697,11 +697,11 @@ elif st.session_state.current_page == "Share Me":
                 mime="text/plain"
             )
 
-# Contoh penggunaan
-link = "https://fakhrishave-hlqgha2kkfbevzxwxtm3fq.streamlit.app/"
-st.write("Klik tombol di bawah untuk menyalin link:")
-if st.button("Salin Link"):
-    copy_to_clipboard_alternative(link)
+    # Contoh penggunaan
+    link = "https://fakhrishave-hlqgha2kkfbevzxwxtm3fq.streamlit.app/"
+    st.write("Klik tombol di bawah untuk menyalin link:")
+    if st.button("Salin Link"):
+        copy_to_clipboard_alternative(link)
     
     st.title("Share Via Link")
     # Membuat layout dengan satu kolom
