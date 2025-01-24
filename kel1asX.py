@@ -685,7 +685,24 @@ elif st.session_state.current_page == "Contact":
 elif st.session_state.current_page == "Share Me":
     # Memberikan jarak antar elemen dengan menggunakan st.markdown() dan CSS
     st.markdown("<br>", unsafe_allow_html=True)  # Menambahkan jarak antar elemen
+    # Fungsi untuk menyalin link ke clipboard
+    def copy_to_clipboard():
+        link = "https://fakhrishave-brhm5hpskxnzeapaxkrgwx.streamlit.app/"
+        pyperclip.copy(link)  # Menyalin link ke clipboard
+        st.session_state["copy_status"] = "Link berhasil disalin!"  # Menyimpan status
 
+    # Inisialisasi status salinan jika belum ada
+    if "copy_status" not in st.session_state:
+        st.session_state["copy_status"] = ""
+
+    def display_link(link):
+        try:
+            pyperclip.copy(link)
+            st.success("Link berhasil disalin ke clipboard!")
+        except Exception:
+            st.error("Gagal menyalin ke clipboard.")
+            st.code(link, language=None)  # Menampilkan link di layar
+    
     st.title("Share Via Link")
     # Membuat layout dengan satu kolom
     with st.container():
