@@ -689,7 +689,25 @@ elif st.session_state.current_page == "Share Me":
     
     # Tampilkan link sebagai kode (agar pengguna bisa menyalin manual)
     st.code(link)
-    
+    st.markdown("""
+    <style>
+    .download-button {
+        color: #ff9933;
+        border: 2px solid #ff9933;
+        background-color: #ffffff;
+        padding: 10px 20px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+    .download-button:hover {
+        background-color: #ff9933;
+        color: white;
+    }
+    </style>
+    """, unsafe_allow_html=True)
     # Sediakan tombol untuk mengunduh link sebagai file teks
     st.download_button(
         label="Unduh Link",
