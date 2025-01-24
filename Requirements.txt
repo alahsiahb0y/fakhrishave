@@ -6,3 +6,4 @@ cycler
 kiwisolver
 base64
 random
+pyperclip
