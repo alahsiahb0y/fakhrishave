@@ -373,7 +373,7 @@ def atox_calc_page(method):
     elif method == "ORAC":
         st.markdown(
             """<div style="text-align: center;">
-                <p>Kalkulator Hadir Pada 24/Januari/2025.</p>
+                <p>Kalkulator Hadir Pada 30/Januari/2025.</p>
                 <span style="font-size: 50px;">😓</span>
             </div>""",
             unsafe_allow_html=True,
@@ -384,7 +384,7 @@ def atox_calc_page(method):
             "https://calendar.google.com/calendar/render?action=TEMPLATE"
             "&text=Pengingat+Kalkulator+ORAC"  # Judul acara
             "&details=Jangan+lupa+gunakan+kalkulator+ORAC+pada+tanggal+24+Januari+2025!"  # Detail acara
-            "&dates=20250124T000000Z/20250124T235900Z"  # Tanggal mulai dan selesai (UTC)
+            "&dates=20250130T000000Z/20250130T235900Z"  # Tanggal mulai dan selesai (UTC)
         )
 
         # Tombol untuk langsung membuka Google Calendar
