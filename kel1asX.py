@@ -6,6 +6,7 @@ import random
 import time
 import pyperclip
 import base64
+import clipboard
 
 # Configure the page layout
 st.set_page_config(page_title="Antioxidant Calc", page_icon="🌿")
@@ -685,26 +686,15 @@ elif st.session_state.current_page == "Share Me":
     # Memberikan jarak antar elemen dengan menggunakan st.markdown() dan CSS
     st.markdown("<br>", unsafe_allow_html=True)  # Menambahkan jarak antar elemen
 
-    # Fungsi untuk menyalin link ke clipboard
-    def copy_to_clipboard():
-        link = "https://fakhrishave-brhm5hpskxnzeapaxkrgwx.streamlit.app/"
-        pyperclip.copy(link)  # Menyalin link ke clipboard
-        st.session_state["copy_status"] = "Link berhasil disalin!"  # Menyimpan status
-
-    # Inisialisasi status salinan jika belum ada
-    if "copy_status" not in st.session_state:
-        st.session_state["copy_status"] = ""
-
-    def copy_to_clipboard("https://fakhrishave-brhm5hpskxnzeapaxkrgwx.streamlit.app/"):
-        try:
-            pyperclip.copy("https://fakhrishave-brhm5hpskxnzeapaxkrgwx.streamlit.app/")
-            print("Link berhasil disalin ke clipboard.")
-        except pyperclip.PyperclipException as e:
-            print("Gagal menyalin link ke clipboard. Error:", e)
-            # Menyimpan link ke file teks sebagai alternatif
-            with open("fallback_link.txt", "w") as f:
-                f.write("https://fakhrishave-brhm5hpskxnzeapaxkrgwx.streamlit.app/")
-            print("Link telah disimpan ke fallback_link.txt.")
+def copy_to_clipboard(link):
+    try:
+        clipboard.copy(link)
+        print("Link berhasil disalin ke clipboard.")
+    except Exception as e:
+        print("Gagal menyalin link ke clipboard. Error:", e)
+        with open("fallback_link.txt", "w") as f:
+            f.write(link)
+        print("Link telah disimpan ke fallback_link.txt.")
 
 
     st.title("Share Via Link")
