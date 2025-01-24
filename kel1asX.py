@@ -683,19 +683,13 @@ elif st.session_state.current_page == "Contact":
     st.markdown(contact_5, unsafe_allow_html=True)
 
 elif st.session_state.current_page == "Share Me":
-    def copy_to_clipboard_alternative(link):
-        try:
-            clipboard.copy(link)  # Menyalin link ke clipboard
-            st.success("Link berhasil disalin ke clipboard.")
-        except Exception as e:
-            st.error(f"Gagal menyalin ke clipboard. Error: {e}")
-            st.code(link)
-            st.download_button(
-                label="Unduh Link",
-                data=link,
-                file_name="fallback_link.txt",
-                mime="text/plain"
-            )
+    st.code(link)
+    st.download_button(
+        label="Unduh Link",
+        data=link,
+        file_name="fallback_link.txt",
+        mime="text/plain"
+    
 
     # Contoh penggunaan
     link = "https://fakhrishave-hlqgha2kkfbevzxwxtm3fq.streamlit.app/"
