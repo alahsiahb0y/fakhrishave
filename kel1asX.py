@@ -691,24 +691,26 @@ elif st.session_state.current_page == "Share Me":
     st.code(link)
     st.markdown("""
     <style>
-    .download-button {
-        color: #ff9933;
-        border: 2px solid #ff9933;
-        background-color: #ffffff;
-        padding: 10px 20px;
-        text-align: center;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 5px;
+    .download_button {
+        color: #ff9933 !important;
+        border: 2px solid #ff9933 !important;
+        background-color: #ffffff !important;
+        padding: 10px 20px !important;
+        text-align: center !important;
+        cursor: pointer !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+        border-radius: 10px !important;
     }
-    .download-button:hover {
-        background-color: #ff9933;
-        color: white;
+    .download_button:hover {
+        background-color: #ff9933!important;
+        color: white !important;
+        border: 2px solid #ffff !important;
     }
     </style>
     """, unsafe_allow_html=True)
     # Sediakan tombol untuk mengunduh link sebagai file teks
+    
     st.download_button(
         label="Unduh Link",
         data=link,
