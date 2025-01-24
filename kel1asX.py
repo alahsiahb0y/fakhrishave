@@ -686,15 +686,15 @@ elif st.session_state.current_page == "Share Me":
     # Memberikan jarak antar elemen dengan menggunakan st.markdown() dan CSS
     st.markdown("<br>", unsafe_allow_html=True)  # Menambahkan jarak antar elemen
 
-def copy_to_clipboard(link):
-    try:
-        clipboard.copy(link)
-        print("Link berhasil disalin ke clipboard.")
-    except Exception as e:
-        print("Gagal menyalin link ke clipboard. Error:", e)
-        with open("fallback_link.txt", "w") as f:
-            f.write(link)
-        print("Link telah disimpan ke fallback_link.txt.")
+    def copy_to_clipboard(link):
+        try:
+            clipboard.copy(link)
+            print("Link berhasil disalin ke clipboard.")
+        except Exception as e:
+            print("Gagal menyalin link ke clipboard. Error:", e)
+            with open("fallback_link.txt", "w") as f:
+                f.write(link)
+            print("Link telah disimpan ke fallback_link.txt.")
 
 
     st.title("Share Via Link")
